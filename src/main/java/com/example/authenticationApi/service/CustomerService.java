@@ -29,7 +29,7 @@ public class CustomerService {
             Customer customer = new Customer();
             customer.setCreatedAt(new Date(System.currentTimeMillis()));
             customer.setUpdatedAt(new Date(System.currentTimeMillis()));
-            customer.setName(customerDto.getName());
+            customer.setUsername(customerDto.getName());
             customer.setEmail(customerDto.getEmail());
             customer.setPhone(customerDto.getPhone());
             customer.setPassword(passwordEncoder.encode(customerDto.getPassword()));
@@ -72,7 +72,7 @@ public class CustomerService {
         } else {
             Customer saveCustomer = foundCustomer.get();
             saveCustomer.setUpdatedAt(new Date(System.currentTimeMillis()));
-            saveCustomer.setName(customer.getName()==null? saveCustomer.getName():customer.getName());
+            saveCustomer.setUsername(customer.getUsername()==null? saveCustomer.getUsername():customer.getUsername());
             saveCustomer.setPhone(customer.getPhone()==null? saveCustomer.getPhone():customer.getPhone());
             return customerRepository.save(saveCustomer);
         }

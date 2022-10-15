@@ -16,10 +16,9 @@ import java.util.Date;
 public class Customer {
     @Id
     private String id;
-    private String name;
+    private String username;
     private String email;
     private String phone;
-    @JsonIgnore
     private String password;
     private Date createdAt;
     private Date updatedAt;
